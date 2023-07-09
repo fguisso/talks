@@ -1,0 +1,34 @@
+name: Deploy in Github Pages
+on: push
+
+permissions: 
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Install slidev
+        run:  npm i -g @slidev/cli
+
+      - name: Get talk title
+        run: |
+          echo "talk_title=$(basename $(git log -1 --name-only -- "slides/" | grep "slides/" | tail -n 1) .md)" >> "$GITHUB_ENV"
+      - name: Build
+        run: slidev build --base /talks/${{env.talk_title}} slides/${{env.talk_title}}/${{env.talk_title}}.md
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: slides/${{env.talk_title}}/dist # The folder the action should deploy.
+          target-folder: ${{ env.talk_title }}
+          clean: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

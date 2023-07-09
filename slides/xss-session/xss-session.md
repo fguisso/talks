@@ -50,7 +50,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-src: pages/guisso-queisso.md
+src: ../../pages/guisso-queisso.md
 ---
 
 ---
@@ -71,16 +71,12 @@ image: https://source.unsplash.com/collection/94734566/1920x1080
 Javascript é a espinha dorsal de muitas aplicações web modernas, tornando a segurança em JavaScript de vital importância. Sem uma segurança robusta, aplicações estão expostas a várias ameaças, desde ataques de injeção de código até o vazamento de dados sensíveis dos usuários. Além de potenciais perdas financeiras, a falta de segurança pode danificar a reputação de uma marca e levar a implicações legais graves. Dessa forma, proteger suas aplicações JavaScript não é apenas uma boa prática de desenvolvimento, mas uma necessidade comercial e legal.
 
 ---
-class: px-20
----
 
 # Notícias
 [CanalTech](https://canaltech.com.br/seguranca/github-corrige-7-falhas-encontradas-em-pacotes-nodejs-195257/)
 
 <img src="/canaltech-github.png" class="rounded shadow" />
 
----
-class: px-20
 ---
 
 # Notícias
