@@ -1,5 +1,8 @@
 name: Deploy in Github Pages
-on: push
+on: 
+  push:
+    paths:
+    - 'slides/**'
 
 permissions: 
   contents: write
