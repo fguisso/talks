@@ -19,7 +19,7 @@ slides
 
 É importante manter a nomeclatura pois o Github Actions vai utiliza-la para fazer o deploy na pasta correta.
 
-O deploy acontece apenas quando tem mudanças dentro do diretorio `slides` e acontece apenas de um em uma talk, pois o Github Actions pega o nome da sua talk baseado nas mudanças do seu ultimo commit, veja na linha [22 do workflow](https://github.com/fguisso/talks/blob/486f65b8845770c7ef800c305c96be6e14388bf3/.github/workflows/github-pages-deploy.yaml#L22).
+O deploy acontece apenas quando tem mudanças dentro do diretorio `slides` e acontece apenas de um em uma talk, pois o Github Actions pega o nome da sua talk baseado nas mudanças do seu ultimo commit, veja na linha [25 do workflow](https://github.com/fguisso/talks/blob/main/.github/workflows/github-pages-deploy.yaml#L25).
 
 ## Tudo pronto!
 
