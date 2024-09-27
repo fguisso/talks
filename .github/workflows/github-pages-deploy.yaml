@@ -27,7 +27,7 @@ jobs:
         run: slidev build --base /talks/${{env.talk_title}} slides/${{env.talk_title}}/${{env.talk_title}}.md
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: slides/${{env.talk_title}}/dist # The folder the action should deploy.
