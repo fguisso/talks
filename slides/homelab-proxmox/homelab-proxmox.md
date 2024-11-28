@@ -12,7 +12,7 @@ themeConfig:
   photo: "./guisso-photo.png"
 ---
 
-# Transformando um <span>Mini PC</span> em um <span>Homelab</span> Completo com <span>Proxmox</span>
+# Transformando um <span>Mini PC</span> em um <span>Homelab</span> Completo com <span>Proxmox.</span>
 
 Como um mini PC do AliExpress se tornou um poderoso homelab com Proxmox.
 
