@@ -16,15 +16,13 @@ jobs:
           fetch-depth: 2
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
       - name: Install dependencies
         run: npm install
-      - name: Install slidev
-        run:  npm i -g @slidev/cli
       - name: Get talk title
-        run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slides/" | grep "slides/" | tail -n 1) .md)" >> "$GITHUB_ENV"
+        run: echo "talk_title=$(basename "$(dirname "$(git show ${{ github.sha }} --name-only -- "slides/" | grep "slides/" | tail -n 1 )")")" >> "$GITHUB_ENV"
       - name: Build
-        run: slidev build --base /talks/${{env.talk_title}} slides/${{env.talk_title}}/${{env.talk_title}}.md --per-slide
+        run: npx slidev build --base /talks/${{env.talk_title}} slides/${{env.talk_title}}/${{env.talk_title}}.md --per-slide
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.4
