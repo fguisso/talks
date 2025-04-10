@@ -1,17 +1,17 @@
 # Guisso? Que isso?
 
-Application Security Engineer @ Willbank.
+👨‍💻 **Application Security Engineer @ Will Bank**
 
-- 📝 **Pasteleiro de agencia** - Wordpress, PHP, cPanel e cafézinhos
-- 🧑‍💻 **Dev/Bitcoin** - Gateway de pagamento pague.nu
-- 🎨 **Fullstack Javascripto** - MEAN, MEVN, NodeBots, reveal.sj/qualy/sli.dev
-- 📤 **Security** - Pentest, treinamento AppSec, CTF
-- 🤹 **Community Manager** - <i>"Fala muito! - Titi</i> / Softskills, comunidades
-- 🎥 **Dev/Decred** - Golang, React Native, Lightning Network
-- 🛠 **Hobbies** - hardware hacking, CTF
+### 💼 De onde eu vim
 
-<br>
-<br>
+- 🥟 **Agência raiz**: Wordpress, cPanel, muito pastel e café forte
+- 💸 **Dev Bitcoin**: Criei o [pague.nu](https://pague.nu) em 2014
+- ⚡ **Decred**: Golang, React Native, Lightning Network 
+- 🎨 **Fullstack JS**: MEAN/MEVN, NodeBots, slides com reveal.js
+- 🔐 **AppSec**: Desenvolvimento Seguro, Pentest, CTF, treinamentos e automação de segurança
+- 🎤 **Comunidades**: Potilivre, SunsecRN, Garoa Hacker Club, /co, Jerimum Hackerspace, Dumont Hackerspace, OWASP, black[block]chain, NodeBR.
+
+Posto uns artigos no meu [blog](https://guisso.dev) e vários outros scripts que ninguém pediu na minha [wiki](https://wiki.guisso.dev).
 
 <style>
 h1 {
