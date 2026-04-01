@@ -23,7 +23,7 @@ themeConfig:
 
 o que está em risco quando você usa e quando você cria
 
-<TalkAvatarBadge avatar="/img/avatar.jpg" photo="/img/photo.png" class="mt-6" />
+<TalkAvatarBadge avatar="./img/avatar.jpg" photo="./img/photo.png" class="mt-6" />
 
 ---
 src: ../../pages/guisso-queisso.md
@@ -54,7 +54,7 @@ e o que vocês podem criar sem querer quando colocarem IA num projeto real."
 
 ---
 layout: section
-triangleOpacity: 0.7
+triangleOpacity: 0.8
 triangleSeed: part1
 ---
 
@@ -328,7 +328,7 @@ triangleHue: -10
 
 # Conceito 2: Vazamento do System Prompt
 
-<div class="eyebrow">LLM06</div>
+<div class="eyebrow">LLM07</div>
 
 > *Sabe quando você configura o assistente dizendo "você é um atendente da empresa X, nunca fale sobre concorrentes"? Esse texto não é secreto.*
 
@@ -342,7 +342,7 @@ triangleHue: -10
 
 <v-click>
 
-<OWASPChip id="LLM06" name="Sensitive Information Disclosure" color="orange" class="mt-4" />
+<OWASPChip id="LLM07" name="System Prompt Leakage" color="orange" class="mt-4" />
 
 </v-click>
 
@@ -414,7 +414,7 @@ triangleHue: 10
 
 # Conceito 3: Output Perigoso
 
-<div class="eyebrow">LLM02</div>
+<div class="eyebrow">LLM05</div>
 
 > *A IA gerou um texto e você jogou direto no seu site. Se alguém manipulou a resposta, seu site pode estar exibindo coisa maliciosa sem você saber.*
 
@@ -429,7 +429,7 @@ triangleHue: 10
 
 <v-click>
 
-<OWASPChip id="LLM02" name="Insecure Output Handling" color="orange" class="mt-4" />
+<OWASPChip id="LLM05" name="Improper Output Handling" color="orange" class="mt-4" />
 
 </v-click>
 
@@ -491,20 +491,20 @@ triangleSeed: owasp-table
 
 | # | Nome | O que é |
 |---|---|---|
-| <OWASPChip id="LLM01" color="orange" /> | Prompt Injection | Usuário dá ordens pra sua IA de fora |
-| <OWASPChip id="LLM02" color="orange"  /> | Output Inseguro | IA responde algo que seu sistema executa sem verificar |
-| <OWASPChip id="LLM03" color="blue"  /> | Dados Envenenados | Modelo treinado com informações falsas ou maliciosas |
-| <OWASPChip id="LLM04" color="blue"  /> | DoS no Modelo | Input gigante que trava ou gera custo absurdo |
-| <OWASPChip id="LLM05" color="blue"  /> | Agente Descontrolado | IA com autonomia faz coisas que não deveria |
-| <OWASPChip id="LLM06" color="orange"  /> | Vazamento de Segredos | IA revela configurações e dados internos |
-| <OWASPChip id="LLM07" color="blue"  /> | Plugin Malicioso | Extensão da IA com comportamento escondido |
-| <OWASPChip id="LLM08" color="blue"  /> | Acesso Excessivo | IA com permissões além do necessário |
-| <OWASPChip id="LLM09" color="blue"  /> | Alucinação | Modelo inventa e seu app apresenta como verdade |
-| <OWASPChip id="LLM10" color="blue"  /> | Consumo sem Limite | Atacante usa sua API sem controle, você paga |
+| <OWASPChip id="LLM01" color="red" /> | Prompt Injection | Usuário manipula o prompt pra burlar as instruções da IA |
+| <OWASPChip id="LLM02" color="orange"  /> | Vazamento de Dados Sensíveis | IA revela dados confidenciais do contexto ou treinamento |
+| <OWASPChip id="LLM03" color="blue"  /> | Supply Chain | Dependências, modelos ou dados de terceiros comprometidos |
+| <OWASPChip id="LLM04" color="blue"  /> | Envenenamento de Dados | Modelo treinado com informações falsas ou maliciosas |
+| <OWASPChip id="LLM05" color="orange"  /> | Output Inadequado | IA responde algo que seu sistema executa sem verificar |
+| <OWASPChip id="LLM06" color="blue"  /> | Agência Excessiva | IA com autonomia faz coisas que não deveria |
+| <OWASPChip id="LLM07" color="orange"  /> | Vazamento do System Prompt | Instruções internas da IA são expostas ao usuário |
+| <OWASPChip id="LLM08" color="blue"  /> | Fraquezas em Vetores | Dados em RAG/embeddings manipulados ou envenenados |
+| <OWASPChip id="LLM09" color="blue"  /> | Desinformação | Modelo alucina e seu app apresenta como verdade |
+| <OWASPChip id="LLM10" color="blue"  /> | Consumo Sem Limite | Atacante usa sua API sem controle, você paga |
 
 <!--
 Não precisa entrar em detalhe em todos. Marque os três que você já mostrou:
-LLM01 (Prompt Injection), LLM02 (Output), LLM06 (Vazamento).
+LLM01 (Prompt Injection), LLM05 (Output), LLM07 (System Prompt).
 
 A ideia é que a turma saia sabendo que existe uma lista oficial pra consultar.
 -->
@@ -720,7 +720,7 @@ triangleOpacity: 0.7
 
 <div class="display-special text-5xl font-bold gradient-text mb-4">Obrigado!</div>
 
-<TalkAvatarBadge avatar="/img/avatar.jpg" photo="/img/photo.png" />
+<TalkAvatarBadge avatar="./img/avatar.jpg" photo="./img/photo.png" />
 
 <div class="grid grid-cols-2 gap-8 mt-8">
   <div class="flex gap-4 items-start">
