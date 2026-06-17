@@ -1,0 +1,497 @@
+/* ════════════════════════════════════════════════════════════════════
+   PotiLivre — "Software Livre, Comunidade e Soberania"
+   Editorial Black & White theme. White predominant, ink-black type.
+   Aesthetic: manifesto / jornal de movimento. Sem cor — só tinta, papel,
+   linhas finas e tipografia serifada (eco do logo serifado da PotiLivre).
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ─── Fonts — self-hosted, SIL OFL 1.1 (sem CDN: software livre até no rodapé) ─── */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter.ttf') format('truetype');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic.ttf') format('truetype');
+  font-weight: 100 900; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader.ttf') format('truetype');
+  font-weight: 200 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader-Italic.ttf') format('truetype');
+  font-weight: 200 800; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono.ttf') format('truetype');
+  font-weight: 100 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --paper:        #ffffff;
+  --paper-2:      #f5f4ef;   /* warm off-white panel */
+  --paper-3:      #ecebe4;   /* deeper panel */
+  --ink:          #0c0c0c;   /* near-black text */
+  --ink-soft:     #2c2c2a;
+  --muted:        #74726a;   /* warm gray */
+  --muted-2:      #9a988f;
+  --line:         #e0ded6;   /* hairline */
+  --line-strong:  #0c0c0c;   /* editorial rule */
+
+  --radius:       4px;
+  --radius-lg:    10px;
+
+  --font-display: 'Instrument Serif', 'Newsreader', Georgia, serif;
+  --font-serif:   'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  --slidev-font-sans:  var(--font-sans);
+  --slidev-font-serif: var(--font-serif);
+  --slidev-font-mono:  var(--font-mono);
+
+  --slidev-code-padding:    8px 14px;
+  --slidev-code-background: #f5f4ef;
+  --slidev-code-font-size:  0.72em;
+  --slidev-code-line-height: 1.55;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────── */
+.slidev-layout {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding: 2.4rem 3rem 2.6rem;
+}
+
+/* subtle paper grain — faint dotted texture, almost invisible */
+.slidev-layout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(12,12,12,0.025) 1px, transparent 1px);
+  background-size: 22px 22px;
+  z-index: 0;
+}
+.slidev-layout > * { position: relative; z-index: 1; }
+
+/* ─── Typography ─────────────────────────────────────────────────────── */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+  font-weight: 500;
+}
+
+.slidev-layout h1 {
+  font-size: 2.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.slidev-layout h2 { font-size: 1.5rem; }
+.slidev-layout h3 { font-size: 1.18rem; }
+.slidev-layout h4 { font-size: 1rem; font-family: var(--font-sans); font-weight: 700; }
+
+/* H1 gets a short rule above it on content slides */
+.slidev-layout.content-slide h1::before {
+  content: '';
+  display: block;
+  width: 46px;
+  height: 3px;
+  background: var(--ink);
+  margin-bottom: 0.55rem;
+}
+
+.slidev-layout p { color: var(--ink-soft); margin: 0 0 0.7em; }
+.slidev-layout strong { color: var(--ink); font-weight: 700; }
+.slidev-layout em { font-family: var(--font-serif); font-style: italic; }
+
+.slidev-layout a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--muted-2);
+  transition: border-color 0.2s ease;
+}
+.slidev-layout a:hover { border-color: var(--ink); }
+
+/* ─── Lists ──────────────────────────────────────────────────────────── */
+.slidev-layout ul,
+.slidev-layout ol {
+  padding-left: 1.25em;
+  margin: 0 0 0.6em;
+  color: var(--ink-soft);
+}
+.slidev-layout li { margin-bottom: 0.34em; font-size: 0.96em; }
+.slidev-layout li strong { color: var(--ink); }
+
+.slidev-layout ul { list-style: none; padding-left: 1.1em; }
+.slidev-layout ul li { position: relative; }
+.slidev-layout ul li::before {
+  content: '';
+  position: absolute;
+  left: -1.1em;
+  top: 0.62em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--ink);
+}
+.slidev-layout ol li::marker { color: var(--ink); font-weight: 600; font-family: var(--font-mono); font-size: 0.85em; }
+
+/* ─── Code ───────────────────────────────────────────────────────────── */
+.slidev-layout .slidev-code {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  max-height: 100%;
+}
+.slidev-layout pre.shiki {
+  font-family: var(--font-mono);
+  background: var(--slidev-code-background) !important;
+  font-size: var(--slidev-code-font-size);
+  line-height: var(--slidev-code-line-height);
+  margin: 0;
+  overflow: auto;
+}
+.slidev-layout code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 0.3em;
+  padding: 0.08em 0.38em;
+  color: var(--ink);
+}
+.slidev-layout pre code {
+  background: transparent; border: none; padding: 0; color: inherit; font-size: inherit;
+}
+.slidev-layout .shiki .dim { opacity: 0.32; }
+
+/* ─── Blockquote — manifesto voice ──────────────────────────────────── */
+.slidev-layout blockquote {
+  border: none;
+  border-left: 2px solid var(--ink);
+  background: transparent;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  margin: 0.9rem 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+.slidev-layout blockquote p { color: var(--ink); margin: 0; }
+.slidev-layout blockquote strong { font-style: normal; }
+
+/* Centered layouts: blockquote without the left rule (it would float detached) */
+.slidev-layout.center blockquote {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+/* Override theme-default's ".statement/.fact = text-center grid" so our
+   left-aligned flex layouts win (same specificity, loaded after the theme). */
+.slidev-layout.statement,
+.slidev-layout.fact {
+  display: flex !important;
+  align-items: center;
+  text-align: left;
+}
+
+/* ─── Tables — editorial, rules only ────────────────────────────────── */
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  margin: 0.4rem 0;
+}
+.slidev-layout thead { border-bottom: 2px solid var(--ink); }
+.slidev-layout th {
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.4rem 0.7rem;
+  border: none;
+  text-align: left;
+}
+.slidev-layout td {
+  padding: 0.38rem 0.7rem;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+.slidev-layout tbody tr:last-child td { border-bottom: 1px solid var(--ink); }
+.slidev-layout td strong { color: var(--ink); }
+.slidev-layout tr:hover td { background: var(--paper-2); }
+
+/* ─── Mermaid / images ──────────────────────────────────────────────── */
+.slidev-layout .mermaid { text-align: center; }
+.slidev-layout .mermaid svg { max-height: 54vh; width: auto; max-width: 100%; }
+
+/* ─── Transitions ───────────────────────────────────────────────────── */
+.slidev-vclick-target {
+  transition: opacity 380ms ease, filter 180ms ease, transform 280ms ease;
+}
+.slidev-vclick-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(4px);
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 340ms ease, filter 200ms ease;
+}
+.fade-enter-from, .fade-leave-to { opacity: 0; filter: blur(4px); }
+
+/* ════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Eyebrow / kicker — small caps label with leading dash */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.64rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--ink);
+}
+
+/* Serif display word, used inline */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.display-it { font-family: var(--font-display); font-style: italic; }
+
+/* Big editorial quote (opening statement) */
+.big-quote {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  border-left: 3px solid var(--ink);
+  padding-left: 1.6rem;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+/* Lead paragraph */
+.lead {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 300;
+}
+
+.text-muted   { color: var(--muted); }
+.text-ink     { color: var(--ink); }
+.small        { font-size: 0.8rem; }
+.tiny         { font-size: 0.68rem; }
+
+/* Highlight: ink underline behind text (B&W "mark") */
+.mark-ink {
+  background: linear-gradient(transparent 62%, rgba(12,12,12,0.14) 62%);
+  padding: 0 0.05em;
+}
+.boxed {
+  border: 1.5px solid var(--ink);
+  padding: 0 0.3em;
+}
+
+/* logo flip animation (slide "O que é a PotiLivre") */
+.flip-target {
+  transition: transform 700ms cubic-bezier(0.65, 0, 0.35, 1);
+  transform: scaleX(1);
+}
+.flip-target.is-flipped { transform: scaleX(-1); }
+
+/* ─── Tag / pill — outline only, monochrome ─────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.16rem 0.55rem;
+  border-radius: 100px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.66rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+.tag-solid { background: var(--ink); color: var(--paper); }
+.tag-ghost { border-color: var(--line); color: var(--muted); }
+
+/* extra-dense table (override the default table sizing) */
+.t-xs table { font-size: 0.68rem; }
+.t-xs th { font-size: 0.6rem; padding: 0.3rem 0.6rem; }
+.t-xs td { padding: 0.28rem 0.6rem; }
+
+/* yes / no glyph helpers for compact tables */
+.yes { font-weight: 700; color: var(--ink); }
+.no  { color: var(--muted-2); }
+
+/* ─── Card / panel ──────────────────────────────────────────────────── */
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  padding: 0.9rem 1.1rem;
+}
+.card-fill { background: var(--paper-2); border-color: var(--paper-3); }
+.card-ink  { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.card-ink :is(p, li, h1, h2, h3, h4, strong, .text-muted) { color: var(--paper); }
+.card-ink .text-muted { color: rgba(255,255,255,0.62); }
+.card-ink code { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); color: #fff; }
+.card-ink .stat-num { color: var(--paper); }
+.card-ink .stat-label { color: rgba(255,255,255,0.62); }
+
+.card-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ─── Stat / big number ─────────────────────────────────────────────── */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  line-height: 0.95;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.35;
+  margin-top: 0.2rem;
+}
+
+/* ─── Brand logo treatment (monochrome) ─────────────────────────────── */
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.4rem;
+  align-items: center;
+}
+.logo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.logo-chip img {
+  height: 26px;
+  width: auto;
+  filter: grayscale(1) contrast(1.15);
+  opacity: 0.92;
+}
+.logo-chip span { font-size: 0.74rem; color: var(--muted); font-weight: 500; }
+
+/* ─── Footer ────────────────────────────────────────────────────────── */
+.deck-footer {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 3rem;
+  right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.58rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  z-index: 2;
+}
+.deck-footer .foot-left { display: flex; align-items: center; gap: 0.55rem; }
+.deck-footer .foot-mark {
+  height: 22px;
+  width: auto;
+  opacity: 0.7;
+  filter: grayscale(1);
+  flex-shrink: 0;
+}
+
+/* numbered hint for ordered process flows */
+.flow-step {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.3rem 0;
+}
+.flow-step .n {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 1.5rem; height: 1.5rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+/* wide variant for multi-char values like "100%" — pill instead of tight circle */
+.flow-step .n.wide {
+  width: auto;
+  min-width: 2.4rem;
+  height: 1.7rem;
+  border-radius: 100px;
+  padding: 0 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* magic-move no scrollbar */
+.slidev-code-magic-move-container,
+.slidev-code-magic-move-container pre.shiki { overflow: hidden !important; }
