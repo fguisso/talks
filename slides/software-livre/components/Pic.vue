@@ -11,5 +11,5 @@ const props = defineProps({
   src: { type: String, required: true },
 })
 
-const full = computed(() => `${import.meta.env.BASE_URL}${props.src.replace(/^\.?\//, '')}`)
+const full = computed(() => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${props.src.replace(/^\.?\//, '')}`)
 </script>

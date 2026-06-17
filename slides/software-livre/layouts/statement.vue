@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const fist = `${import.meta.env.BASE_URL}logos/fist.svg`
+const fist = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/logos/fist.svg`
 </script>
 
 <style scoped>

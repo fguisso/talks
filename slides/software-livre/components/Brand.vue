@@ -14,5 +14,5 @@ const props = defineProps({
   h:     { type: [Number, String], default: 26 },
 })
 
-const src = computed(() => `${import.meta.env.BASE_URL}logos/${props.name}.svg`)
+const src = computed(() => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/logos/${props.name}.svg`)
 </script>

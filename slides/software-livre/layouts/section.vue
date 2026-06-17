@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const mark = `${import.meta.env.BASE_URL}logos/potilivre.png`
+const mark = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/logos/potilivre.png`
 </script>
 
 <style scoped>

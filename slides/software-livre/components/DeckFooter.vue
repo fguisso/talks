@@ -13,5 +13,5 @@ defineProps({
   label: { type: String, default: 'PotiLivre · Software Livre, Comunidade & Soberania' },
   right: { type: String, default: 'guisso.dev' },
 })
-const mark = `${import.meta.env.BASE_URL}logos/potilivre.png`
+const mark = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/logos/potilivre.png`
 </script>

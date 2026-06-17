@@ -21,9 +21,9 @@ const props = defineProps({
   role:   { type: String, default: 'guisso.dev · Comunidade PotiLivre' },
 })
 
-const base = import.meta.env.BASE_URL
-const avatarSrc = computed(() => `${base}${props.avatar.replace(/^\.?\//, '')}`)
-const photoSrc = computed(() => `${base}${props.photo.replace(/^\.?\//, '')}`)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const avatarSrc = computed(() => `${base}/${props.avatar.replace(/^\.?\//, '')}`)
+const photoSrc = computed(() => `${base}/${props.photo.replace(/^\.?\//, '')}`)
 </script>
 
 <style scoped>
