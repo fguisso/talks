@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Get talk title
-        run: echo "talk_title=$(basename "$(dirname "$(git show ${{ github.sha }} --name-only -- "slides/" | grep "slides/" | tail -n 1 )")")" >> "$GITHUB_ENV"
+        run: echo "talk_title=$(git show ${{ github.sha }} --name-only --pretty=format: -- 'slides/' | grep -oE '^slides/[^/]+/' | sort -u | head -n 1 | cut -d/ -f2)" >> "$GITHUB_ENV"
       - name: Build
         run: npx slidev build --base /talks/${{env.talk_title}} slides/${{env.talk_title}}/${{env.talk_title}}.md --per-slide
 

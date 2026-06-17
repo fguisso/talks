@@ -951,3 +951,4 @@ Conteúdo com base em fontes públicas e em pesquisa de junho/2026.
 Logos via Simple Icons e Wikimedia Commons. Fontes Inter, Newsreader, Instrument Serif e JetBrains Mono (SIL OFL 1.1), auto-hospedadas, sem CDN.
 Licença deste documento: <strong>CC BY-SA 4.0</strong>.
 </div>
+
