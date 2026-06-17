@@ -1,0 +1,1 @@
+import{z as s,f as o,o as c}from"./modules/vue-CL6EimNF.js";import{u as a}from"./slidev/context-BxcaGhUj.js";const n=["src"],m={__name:"Pic",props:{src:{type:String,required:!0}},setup(e){a();const r=e,t=s(()=>`/talks/software-livre${r.src.replace(/^\.?\//,"")}`);return(l,p)=>(c(),o("img",{src:t.value},null,8,n))}};export{m as _};
